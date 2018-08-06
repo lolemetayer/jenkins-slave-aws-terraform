@@ -1,7 +1,7 @@
 FROM jenkinsci/slave
 
-ENV AWSCLI_VERSION=1.15.71
-ENV TERRAFORM_VERSION=0.10.6
+ARG AWSCLI_VERSION=1.15.71
+ARG TERRAFORM_VERSION=0.10.6
 
 # Execute actions below (installation as root)
 USER root
