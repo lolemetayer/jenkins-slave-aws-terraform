@@ -18,5 +18,9 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     rm -vf terraform.zip && \
     mv -v terraform /usr/local/bin/
 
+# Add build date in the image
+RUN echo "Build at $(date "+%Y-%m-%d %H:%M:%S %Z")" >> /home/jenkins/build_date.txt && \
+    echo "Source repository: https://github.com/lolemetayer/jenkins-slave-aws-terraform" >> /home/jenkins/build_date.txt
+
 # Set default user to jenkins
 USER jenkins
